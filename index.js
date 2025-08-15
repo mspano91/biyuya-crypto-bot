@@ -1,5 +1,4 @@
 // index.js
-
 import dotenv from "dotenv";
 import { Telegraf } from "telegraf";
 import {
@@ -19,6 +18,23 @@ import {
     formatCurrency
 } from "./utils.js";
 import { messages } from "./messages.js";
+
+// --- EXPRESS SERVER FOR UPTIMEROBOT ---
+import express from "express";
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Endpoint raíz para que UptimeRobot haga ping
+app.get("/", (req, res) => {
+  res.send("Bot is alive! 🚀");
+});
+
+// Iniciar servidor Express
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 
 // Load environment variables
 dotenv.config();
