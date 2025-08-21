@@ -28,6 +28,7 @@ export const COIN_ICONS = {
 
 // Precios objetivo para recibir una alerta de compra (el valor es en VS_CURRENCY)
 // Si una moneda no está aquí, no tendrá alerta de precio objetivo.
+
 export const TARGET_BUY_PRICES = {
   bitcoin: 70000,
   ethereum: 1900,
